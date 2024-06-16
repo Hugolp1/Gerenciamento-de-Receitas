@@ -12,11 +12,9 @@
         <div class="profile-info">
             <p><strong>Nome de usuário:</strong> NomeDoUsuario</p>
             <p><strong>Email:</strong> usuario@example.com</p>
-            <!-- Adicione mais informações do usuário conforme necessário -->
         </div>
         <div class="profile-actions">
-            <button onclick="location.href='edit-profile.html'">Editar Perfil</button>
-            <button onclick="location.href='logout.php'">Logout</button>
+            <button onclick="location.href='index.php'">Logout</button>
         </div>
     </div>
 </body>

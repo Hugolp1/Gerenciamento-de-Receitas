@@ -9,10 +9,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>Gerenciamento de Receitas</h1>
+        <h1>Lista de Receitas</h1>
         
         <div class="recipe-list">
-            <h2>Lista de Receitas</h2>
 
             <div class="recipe-item">
                 <h3>Nome da Receita 1</h3>
@@ -29,15 +28,11 @@
                     <button>Ver Receita</button>
                 </div>
             </div>
-
-            <!-- Adicione mais itens de receita conforme necessário -->
-
         </div>
 
         <div class="profile-actions">
             <button onclick="location.href='index.php'">Página Inicial</button>
             <button onclick="location.href='profile.php'">Perfil</button>
-            <button onclick="location.href='logout.php'">Logout</button>
         </div>
     </div>
 </body>

@@ -9,12 +9,14 @@
 <body>
     <div class="container">
         <h1>Login</h1>
-        <form action="login.php" method="POST">
-            <input type="text" name="username" placeholder="Nome de usuário" required>
-            <input type="password" name="password" placeholder="Senha" required>
-            <button type="submit">Entrar</button>
-        </form>
-        <p>Não tem uma conta? <a href="register.php">Registre-se</a></p>
+
+        <?php 
+        
+        require_once "banco.php";
+        
+        require "form-login.php";
+
+        ?>
     </div>
 </body>
 </html>

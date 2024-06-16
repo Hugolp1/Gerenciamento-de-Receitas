@@ -9,14 +9,26 @@
 <body>
     <div class="container">
         <h1>Cadastro</h1>
-        <form action="register.php" method="POST">
-            <input type="text" name="username" placeholder="Nome de usuário" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Senha" required>
-            <input type="password" name="confirm_password" placeholder="Confirme a senha" required>
-            <button type="submit">Registrar</button>
-        </form>
-        <p>Já tem uma conta? <a href="login.html">Entre aqui</a></p>
+        <?php 
+        
+            require_once "banco.php";
+            
+            require "form-register.php";
+            
+            $usuario = $_POST['username'] ?? null;
+            $email = $_POST['email'] ?? null;
+            $senha = $_POST['password'] ?? null;
+            $confirm_sen = $_POST['confirm_password'] ?? null;
+            
+            if(is_null($usuario) || is_null($email) || is_null($senha)){
+            } else if($senha != $confirm_sen){
+                echo '<p>As senhas precisam ser iguais</p>';
+            } else{
+                criarUsuario($usuario, $email, $senha);
+                echo "Usuario criado com sucesso!";
+            }
+
+        ?>
     </div>
 </body>
 </html>
