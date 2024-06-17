@@ -9,13 +9,19 @@
 <body>
     <div class="container">
         <h1>Perfil do Usuário</h1>
-        <div class="profile-info">
-            <p><strong>Nome de usuário:</strong> NomeDoUsuario</p>
-            <p><strong>Email:</strong> usuario@example.com</p>
-        </div>
-        <div class="profile-actions">
-            <button onclick="location.href='index.php'">Logout</button>
-        </div>
+        <?php 
+        
+            session_start();
+
+            require_once "banco.php";
+
+            if(is_null($_SESSION['username'])){
+                header("Location: login.php");
+            }
+
+            require "profile-visual.php";
+        
+        ?>
     </div>
 </body>
 </html>

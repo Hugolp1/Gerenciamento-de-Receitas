@@ -15,8 +15,6 @@
 
     function criarUsuario(string $usuario, string $email, string $senha, $debug=false) : void {
         global $banco;
-
-        $senha = password_hash($senha, PASSWORD_DEFAULT);
         
         $q = "INSERT INTO usuarios(usuario, email, senha) values ('$usuario', '$email', '$senha')";
     
