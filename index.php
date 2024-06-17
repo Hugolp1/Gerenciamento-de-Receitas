@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Bem-vindo ao Gerenciamento de Receitas</h1>
+        <h1>Bem-vindo!</h1>
         <div class="menu">
             <button onclick="location.href='login.php'">Login</button>
             <button onclick="location.href='register.php'">Registrar</button>

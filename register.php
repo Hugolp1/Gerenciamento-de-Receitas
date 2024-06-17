@@ -19,13 +19,21 @@
             $email = $_POST['email'] ?? null;
             $senha = $_POST['password'] ?? null;
             $confirm_sen = $_POST['confirm_password'] ?? null;
+
+            $sucesso = false;
             
             if(is_null($usuario) || is_null($email) || is_null($senha)){
             } else if($senha != $confirm_sen){
                 echo '<p>As senhas precisam ser iguais</p>';
             } else{
                 criarUsuario($usuario, $email, $senha);
-                echo "Usuario criado com sucesso!";
+                echo "<p>Usuario criado com sucesso!</p>";
+                $sucesso = true;
+            }
+
+            if($sucesso == true){
+                sleep(2);
+                header("Location: login.php");
             }
 
         ?>

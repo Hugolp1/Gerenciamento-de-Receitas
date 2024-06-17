@@ -16,6 +16,16 @@
         
         require "form-login.php";
 
+        $usuario = $_POST['username'] ?? null;
+        $senha = $_POST['password'] ?? null;
+
+        $sucesso = false;
+
+        if($sucesso == true){
+            sleep(2);
+            header("Location: profile.html");
+        }
+
         ?>
     </div>
 </body>
