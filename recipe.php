@@ -27,7 +27,7 @@
                     echo '<h3>' . $row['nome_receita'] . '</h3>';
                     echo '<p>' . $row['descricao'] . '</p>';
                     echo '<div class="recipe-actions">';
-                    echo '<button onclick="location.href=\'recipe.php?id=' . $row['cod_receita'] . '\'">Ver ingredientes</button>';
+                    echo '<button onclick="location.href=\'recipe-visualiser.php?id=' . $row['cod_receita'] . '\'">Ver ingredientes</button>';
                     echo '</div>';
                     echo '</div>';
                 }
