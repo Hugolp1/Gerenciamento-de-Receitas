@@ -11,22 +11,32 @@
         <h1>Lista de Receitas</h1>
         
         <div class="recipe-list">
+            <?php
+            session_start();
+            require_once "banco.php";
 
-            <div class="recipe-item">
-                <h3>Nome da Receita 1</h3>
-                <p>Descrição breve da receita 1.</p>
-                <div class="recipe-actions">
-                    <button>Ver Receita</button>
-                </div>
-            </div>
+            $query = "SELECT cod_receita, nome_receita, descricao FROM receitas WHERE usuario = ?"; 
+            $stmt = $banco->prepare($query);
+            $stmt->bind_param("s", $_SESSION['username']);
+            $stmt->execute();
+            $result = $stmt->get_result();
 
-            <div class="recipe-item">
-                <h3>Nome da Receita 2</h3>
-                <p>Descrição breve da receita 2.</p>
-                <div class="recipe-actions">
-                    <button>Ver Receita</button>
-                </div>
-            </div>
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo '<div class="recipe-item">';
+                    echo '<h3>' . $row['nome_receita'] . '</h3>';
+                    echo '<p>' . $row['descricao'] . '</p>';
+                    echo '<div class="recipe-actions">';
+                    echo '<button onclick="location.href=\'recipe.php?id=' . $row['cod_receita'] . '\'">Ver ingredientes</button>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+            } else {
+                echo '<p>Nenhuma receita encontrada.</p>';
+            }
+
+            $stmt->close();
+            ?>
         </div>
 
         <div class="profile-actions">
